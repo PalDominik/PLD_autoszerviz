@@ -6,9 +6,7 @@ namespace Program
 {
     public class Szerviz
     {
-        private List<Jarmu> jarmuvek;
-
-        public List<Jarmu> Jarmuvek { get => jarmuvek; set => jarmuvek = value; }
+        protected List<Jarmu>? jarmuvek = new List<Jarmu>();
 
         public void JarmuFelvetele(Jarmu jarmu)
         {

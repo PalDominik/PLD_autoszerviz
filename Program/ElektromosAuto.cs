@@ -18,9 +18,20 @@ namespace Program
         {
             get => akkumulatorSzint; set
             {
-                Math.Clamp(value, 0, 100);
+                if (value < 0)
+                {
+                    akkumulatorSzint = 0;
+                }
+                else if (value > 100)
+                {
+                    akkumulatorSzint = 100;
+                }
+                else
+                {
+                    akkumulatorSzint = value;
+                }
             }
-        }
+            }
 
         public override void InformaciotAd()
         {

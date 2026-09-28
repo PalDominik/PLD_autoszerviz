@@ -15,9 +15,10 @@ namespace Program
         public Jarmu(string rendszam, int kor, int kilometerOra, int uzemanyagSzint)
         {
             this.Rendszam = rendszam;
-            this.kor = kor;
+            this.Kor = kor;
             this.KilometerOra = kilometerOra;
             this.UzemanyagSzint = uzemanyagSzint;
+            this.SzervizSzukseges = szervizSzukseg;
         }
 
         public string Rendszam
@@ -34,7 +35,23 @@ namespace Program
                 }
             }
         }
-        public int Kor { get => kor; set => kor = value; }
+        public int Kor { get => kor; set
+            {
+                if (value < 0)
+                {
+                    kor = 0;
+
+                }
+                else if (value > 50)
+                {
+                    kor = 50;
+                }
+                else
+                {
+                    kor = value;
+                }
+            }
+        }
         public int KilometerOra
         {
             get => kilometerOra; set
@@ -43,6 +60,7 @@ namespace Program
                 {
                     kilometerOra = 0;
                 }
+
                 else
                 {
                     kilometerOra = value;
@@ -73,7 +91,7 @@ namespace Program
         {
             get => szervizSzukseg; set
             {
-                if (this.kilometerOra <= 200000)
+                if (this.kilometerOra >= 200000)
                 {
                     szervizSzukseg = true;
                 }
