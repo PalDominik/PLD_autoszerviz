@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PLD_autoszerviz
+namespace Program
 {
     public class Szerviz
     {
@@ -10,7 +10,7 @@ namespace PLD_autoszerviz
 
         public List<Jarmu> Jarmuvek { get => jarmuvek; set => jarmuvek = value; }
 
-        public void JarmuFelvetel(Jarmu jarmu)
+        public void JarmuFelvetele(Jarmu jarmu)
         {
             jarmuvek.Add(jarmu);
             Console.WriteLine("A jármű megérkezett a szervizbe");
@@ -28,7 +28,7 @@ namespace PLD_autoszerviz
         {
             for (int i = 0; i < jarmuvek.Count; i++)
             {
-                if (jarmuvek[i].SzervizSzukseg)
+                if (jarmuvek[i].SzervizSzukseges)
                 {
                     jarmuvek[i].Szervizel(dij);
                 }

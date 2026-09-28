@@ -1,4 +1,4 @@
-﻿namespace PLD_autoszerviz
+﻿namespace Program
 {
     public class Program
     {

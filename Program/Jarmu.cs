@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PLD_autoszerviz
+namespace Program
 {
     public class Jarmu
     {
@@ -14,14 +14,17 @@ namespace PLD_autoszerviz
 
         public Jarmu(string rendszam, int kor, int kilometerOra, int uzemanyagSzint)
         {
-            this.rendszam = rendszam;
+            this.Rendszam = rendszam;
             this.kor = kor;
-            this.kilometerOra = kilometerOra;
-            this.uzemanyagSzint = uzemanyagSzint;
+            this.KilometerOra = kilometerOra;
+            this.UzemanyagSzint = uzemanyagSzint;
         }
 
-        public string Rendszam { get => rendszam; set { 
-            if(value == "")
+        public string Rendszam
+        {
+            get => rendszam; set
+            {
+                if (value == "")
                 {
                     rendszam = "ISMERETLEN";
                 }
@@ -29,11 +32,14 @@ namespace PLD_autoszerviz
                 {
                     rendszam = value;
                 }
-            } }
+            }
+        }
         public int Kor { get => kor; set => kor = value; }
-        public int KilometerOra { get => kilometerOra; set
+        public int KilometerOra
+        {
+            get => kilometerOra; set
             {
-                if(value < 0)
+                if (value < 0)
                 {
                     kilometerOra = 0;
                 }
@@ -41,12 +47,17 @@ namespace PLD_autoszerviz
                 {
                     kilometerOra = value;
                 }
-            } }
-        public int UzemanyagSzint { get => uzemanyagSzint; set { 
-                if(value < 0)
+            }
+        }
+        public int UzemanyagSzint
+        {
+            get => uzemanyagSzint; set
+            {
+                if (value < 0)
                 {
                     uzemanyagSzint = 0;
-                }else if(value > 100)
+                }
+                else if (value > 100)
                 {
                     uzemanyagSzint = 100;
                 }
@@ -56,10 +67,13 @@ namespace PLD_autoszerviz
                 }
 
 
-            } }
-        public bool SzervizSzukseg { get => szervizSzukseg; set
+            }
+        }
+        public bool SzervizSzukseges
+        {
+            get => szervizSzukseg; set
             {
-                if(this.kilometerOra <= 200000)
+                if (this.kilometerOra <= 200000)
                 {
                     szervizSzukseg = true;
                 }
@@ -77,7 +91,7 @@ namespace PLD_autoszerviz
 
         public virtual void Szervizel(int dij)
         {
-            if(dij > 100000)
+            if (dij > 100000)
             {
                 this.kilometerOra -= 10000;
 

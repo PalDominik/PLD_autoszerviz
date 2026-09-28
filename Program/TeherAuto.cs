@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PLD_autoszerviz
+namespace Program
 {
     public class TeherAuto : Jarmu
     {
@@ -13,7 +13,9 @@ namespace PLD_autoszerviz
             this.rakomany = rakomany;
         }
 
-        public int Rakomany { get => rakomany; set
+        public int Rakomany
+        {
+            get => rakomany; set
             {
                 if (value < 0)
                 {
