@@ -7,7 +7,7 @@ namespace Program
     public class ElektromosAuto : Jarmu
     {
         private int akkumulatorSzint;
-
+        //hellooooo
         public ElektromosAuto(string rendszam, int kor, int kilometerOra, int akkumulatorSzint) : base(rendszam, kor, kilometerOra, 0)
         {
 
